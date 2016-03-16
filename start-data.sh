@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+/start.sh
+
 sleep 30s
 
 # load test data
