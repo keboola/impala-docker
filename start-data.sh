@@ -5,9 +5,9 @@
 sleep 30s
 
 # load test data
-su -c "hdfs dfs -put /escaping.csv /tmp/escaping.csv" impala
-impala-shell -q "CREATE EXTERNAL TABLE escaping (col1 VARCHAR(255), col2 VARCHAR(255)) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' ESCAPED BY '%' LOCATION '/tmp'"
-impala-shell -q "SELECT * FROM escaping"
+su -c "hdfs dfs -put /sales.csv /tmp/sales.csv" impala
+impala-shell -q "CREATE EXTERNAL TABLE sales (usergender string, usercity string, usersentiment int, zipcode string, sku string, createdat string, category string, price float, county string, countycode string, userstate string, categorygroup string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LOCATION '/tmp'"
+impala-shell -q "SELECT * FROM sales"
 
 # run as daemon
 while true
